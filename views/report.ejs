@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+       body{
+      background-color: red;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .logo{
+        float: left;
+        padding:30px
+    }
+  </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-centre">
+      <div class="container">
+  
+        <ul class="nav navbar-nav navbar-centre">
+          <li class="active"><a href="/">HOME</a></li>
+          <li class="active"><a href="#">ABOUT US</a></li>
+          <li class="active"><a href="/Dashboard">DASHBOARD</a></li>
+          <li class="active"><a href="/Space">ASSIGN PARKING</a></li>
+              <li class="active"><a href="&">PARKING REPORT</a></li>
+              <li class="active"><a href="/logout">LOGOUT</a></li>
+        </ul>
+       
+      </div>
+    </nav>
+<div class="container">
+    <div class="row">
+        <h1>Parking Status</h1>
+        <br>
+     <table class="table table-striped table-primary">
+      <thead>
+        <tr>
+            <th>Space Title </th>
+          <th>Vehicle Number</th>
+           <th>Vehicle Type</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+       <% if(records_space.length >0){
+          
+       for(var i=0;i<records_entry.length;i++){
+           
+        %>
+        <tr>
+            <td><%= records_space[i].spacetitle %></td>
+            <td><%= records_entry[i].vnumber %></td>
+          <td><%= records_entry[i].vehicletype %></td>
+        </tr>
+        <% }} %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

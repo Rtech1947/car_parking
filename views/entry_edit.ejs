@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+       body{
+      background-color: red;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .logo{
+        float: left;
+        padding:30px
+    }
+  </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-centre">
+      <div class="container">
+  
+        <ul class="nav navbar-nav navbar-centre">
+          <li class="active"><a href="/">HOME</a></li>
+          <li class="active"><a href="#">ABOUT US</a></li>
+          <li class="active"><a href="/Dashboard">DASHBOARD</a></li>
+          <li class="active"><a href="/Space">ASSIGN PARKING</a></li>
+              <li class="active"><a href="/Entries">PARKING REPORT</a></li>
+              <li class="active"><a href="/logout">LOGOUT</a></li>
+        </ul>
+       
+      </div>
+    </nav>
+
+<div class="container">
+    <div class="row">
+
+        <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">Edit Entry</div>
+                     </div>  
+                <div class="panel-body" >
+                    <form action="/edit/" id="EmployeeForm" class="form-horizontal" method="post"  role="form">
+                      <input type="hidden" name="id" value="<%= id %>">
+                        <div class="form-group">
+                          <% if(errors !=''){%>
+                          <p style="text-align: center;color:red;"><%= errors.Entries.msg %></p>
+                            <% } %>
+
+                            <% if(success !=''){%>
+                              <p style="text-align: center;color:green;"><%= success %></p>
+                                <% } %>
+                            <label for="username" class="col-md-3 control-label">Vehicle number</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="vnumber" value="<%= records.Entries %>" placeholder="Enter Space Name">
+                            </div>
+                        </div>
+                        <label for="username" class="col-md-3 control-label">Vehicle Type</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="vehicletype" value="<%= records.Entries %>" placeholder="Enter Space Name">
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <!-- Button -->                                        
+                            <div class="col-md-offset-3 col-md-9">
+                            <input type="submit" name="submit" value="Update Entry" class="btn btn-primary">   
+                            </div>
+                        </div>
+                        
+                        <p><a href="/Entries">View all Lists</a></p>
+                         
+                    </form>
+                 </div>
+            </div>
+
+       
+       
+        
+ </div> 
+    </div>
+  </div>
+  </body>
+  </html>

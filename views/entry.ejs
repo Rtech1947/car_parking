@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+       body{
+      background-color: red;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .logo{
+        float: left;
+        padding:30px
+    }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+          <div id="loginbox"  class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="panel panel-info">
+                  <div class="panel-heading">
+                      <div class="panel-title"> Entry Form</div>
+                       </div>  
+                  <div class="panel-body" >
+                       <form action="/Entry" id="EmployeeForm" class="form-horizontal" method="post"  role="form">
+                        <% if(msg !=''){ %>
+                          <p style="text-align: center">   <%= msg %></p>
+                          <% } %>
+                        <div class="logo">
+                            <img src="./images/ji.jpg" height="120px" width="200px">
+                        </div>
+                        <div class="logo">
+                            <img src="./images/car-park.jpg" height="120px" width="200px">
+                        </div>
+                          <div class="form-group">
+                              <label for="vnumber" class="col-md-3 control-label">Vehicle Number</label>
+                              <div class="col-md-9">
+                                  <input type="text" class="form-control" name="vnumber">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="vehicletype" class="col-md-3 control-label">Vehicle Type</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="vehicletype">
+                            </div>
+                        </div>
+                          <div class="form-group">
+                            <label for="entrytime" class="col-md-3 control-label">Entry Time</label>
+                            <div class="col-md-9">
+                                <input type="time" class="form-control" name="entrytime">
+                            </div>
+                        </div>
+                          <div class="form-group">
+                              <label for="entrydate" class="col-md-3 control-label">Entry Date</label>
+                              <div class="col-md-9">
+                                  <input type="date" class="form-control" name="entrydate">
+                              </div>
+                          </div>  <div class="form-group">
+                            <div class="form-group">
+                                <label for="description" class="col-md-3 control-label">Description</label>
+                                <div class="col-md-9">
+                                    <textarea type="text" class="form-control" name="description"></textarea>
+                                </div>
+                            </div>
+                              <!-- Button -->                                        
+                              <div class="col-md-offset-3 col-md-9">
+                              <input type="submit" name="Save Entry" value="Save Entry" class="btn btn-primary">  
+                              </div>
+                              <p>if you watched Entry Details <a href="/entries">Click here</a></p>
+                            </div>
+                      </form>
+                   </div>
+              </div>
+  
+         
+         
+          
+   </div> 
+      </div>
+    </div>
+  </body>
+</html>

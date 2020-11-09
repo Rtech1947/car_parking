@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+       body{
+      background-color: red;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .logo{
+        float: left;
+        padding:10px
+    }
+  </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-centre">
+      <div class="container">
+  
+        <ul class="nav navbar-nav navbar-centre">
+          <li class="active"><a href="/">HOME</a></li>
+          <li class="active"><a href="#">ABOUT US</a></li>
+          <li class="active"><a href="/Dashboard">DASHBOARD</a></li>
+          <li class="active"><a href="/Space">ASSIGN PARKING</a></li>
+              <li class="active"><a href="/Entries">PARKING REPORT</a></li>
+              <li class="active"><a href="/logout">LOGOUT</a></li>
+        </ul>
+       
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+          <div id="loginbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="panel panel-info">
+                  <div class="panel-heading">
+                      <div class="panel-title">Space Entry Form</div>
+                       </div>  
+                  <div class="panel-body" >
+                      <form action="/Space" id="EmployeeForm" class="form-horizontal" method="post"  role="form">
+                        <% if(msg !=''){ %>
+                          <p style="text-align: center">   <%= msg %></p>
+                          <% } %>
+                          <div class="logo">
+                            <img src="./images/ji.jpg" height="120px" width="200px">
+                        </div>
+                        <div class="logo">
+                            <img src="./images/car-park.jpg" height="120px" width="200px">
+                        </div>
+                          <div class="form-group">
+                              <label for="spacetitle" class="col-md-3 control-label">Space Title</label>
+                              <div class="col-md-9">
+                                  <input type="text" class="form-control" name="spacetitle">
+                              </div>
+                          </div>
+                                
+                          <div class="form-group">
+                              <label for="totalparkingspace" class="col-md-3 control-label">Total Parking Space</label>
+                              <div class="col-md-9">
+                                  <input type="text" class="form-control" name="totalparkingspace">
+                              </div>
+                          </div>  <div class="form-group">
+                            <div class="form-group">
+                                <label for="description" class="col-md-3 control-label">Description</label>
+                                <div class="col-md-9">
+                                    <textarea type="text" class="form-control" name="description"></textarea>
+                                </div>
+                            </div>
+                              <!-- Button -->                                        
+                              <div class="col-md-offset-3 col-md-9">
+                              <input type="submit" name="Save Space" value="Save Space" class="btn btn-primary">  
+                              </div>
+                              <p>if you watched space <a href="/spaces">Click here</a></p>
+                            </div>
+                          
+                      </form>
+                   </div>
+              </div>
+  
+         
+         
+          
+   </div> 
+      </div>
+    </div>
+  </body>
+</html>
